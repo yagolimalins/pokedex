@@ -1,13 +1,14 @@
 from bs4 import BeautifulSoup
 
-def get_base_stats():
+def get_base_stats(database_scrap):
 
-    with open("index.html", "r", encoding='utf8') as f:
-        doc = BeautifulSoup(f, "html.parser")
+    database_scrap = database_scrap
+    soup = BeautifulSoup(database_scrap, "html.parser")
 
     base_stats = []
 
-    base_stats_table = doc.find_all('table', attrs={'class': 'vitals-table'})[3]
+    base_stats_table = soup.find_all('table', attrs={'class': 'vitals-table'})[3]
+    base_stats_table = soup.find_all('table', attrs={'class': 'vitals-table'})[3]
     table_body = base_stats_table.find('tbody')
 
     rows = table_body.find_all('tr')

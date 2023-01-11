@@ -2,9 +2,9 @@ from get_base_stats import get_base_stats
 
 class Pokemon:
     """Basic class for a pokemon's base stats"""
-    def __init__(self, name):
+    def __init__(self, name, database_scrap):
 
-        base_stats = get_base_stats()
+        base_stats = get_base_stats(database_scrap)
 
         self.name = name
         self.hp = base_stats[0][0]
