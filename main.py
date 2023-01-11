@@ -1,22 +1,16 @@
 from pokemon import Pokemon
-from get_database_scrap import get_database_scrap
+from db_scrap import pokedex_scrap
+from print_pokemon_data import print_pokemon_data
 
 active = True
 
 while active:
     print("----------------------")
 
-    pokemon_input = input("Enter a pokemon's name: ").lower().strip()
+    pokemon_input = input("Enter a pokemon's name: ")
 
-    database_scrap = get_database_scrap('https://pokemondb.net/pokedex/' + pokemon_input)
+    pokedex_data = pokedex_scrap(pokemon_input)
 
-    pokemon = Pokemon(pokemon_input, database_scrap)
+    pokemon = Pokemon(pokemon_input, pokedex_data)
 
-    print(pokemon.name.upper() + " POKEDEX DATA:")
-
-    print("HP: " + pokemon.hp +
-          "\nAttack: " + pokemon.attack +
-          "\nDefense: " + pokemon.defense +
-          "\nSP Attack: " + pokemon.sp_attack +
-          "\nSP Defense: " + pokemon.sp_defense +
-          "\nSpeed: " + pokemon.speed)
+    print_pokemon_data(pokemon)
