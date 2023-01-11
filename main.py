@@ -4,6 +4,7 @@ from get_database_scrap import get_database_scrap
 active = True
 
 while active:
+    print("----------------------")
 
     pokemon_input = input("Enter a pokemon's name: ").lower().strip()
 
@@ -12,6 +13,7 @@ while active:
     pokemon = Pokemon(pokemon_input, database_scrap)
 
     print(pokemon.name.upper() + " POKEDEX DATA:")
+
     print("HP: " + pokemon.hp +
           "\nAttack: " + pokemon.attack +
           "\nDefense: " + pokemon.defense +
