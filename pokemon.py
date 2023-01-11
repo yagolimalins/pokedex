@@ -4,12 +4,12 @@ from functions.db_scrap import db_scrap
 
 
 class Pokemon:
-    """Design a pokemon's stats and data tree using methods fed by scrapping data"""
+    """Creates a pokemon object with attributes fed by webscraping"""
 
     def __init__(self, name):
-        html = db_scrap(name)
+        html = db_scrap(name)  # Create scrapped html data using db_scrap function
 
-        pokedex_data = get_pokedex_data(html)
+        pokedex_data = get_pokedex_data(html)  # Calls pokedex data scrapping function and uses html data
 
         self.name = name.title()
 
@@ -21,7 +21,7 @@ class Pokemon:
         # self.abilities = pokedex_data['abilities']
         # self.local = pokedex_data['local']
 
-        base_stats = get_base_stats(html)
+        base_stats = get_base_stats(html)  # Calls base stats scrapping function and uses html data
 
         self.hp = base_stats['hp']
         self.attack = base_stats['attack']
@@ -31,5 +31,6 @@ class Pokemon:
         self.speed = base_stats['speed']
 
     def show_data(self):
+        """Get attributes from this Pokemon instance"""
         for attribute, value in self.__dict__.items():
             print(attribute, '=', value)

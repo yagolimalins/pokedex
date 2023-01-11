@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 
 
 def get_pokedex_data(html):
-    """Uses provided scrapped html data for fetching base stats"""
+    """Uses provided scrapped html data for fetching pokedex data"""
     html = html
     soup = BeautifulSoup(html, "html.parser")
     base_stats_table = soup.find_all('table', attrs={'class': 'vitals-table'})[0]
