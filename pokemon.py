@@ -1,7 +1,7 @@
 from get_base_stats import get_base_stats
 
 class Pokemon:
-    """Basic class for a pokemon's base stats"""
+    """Design a pokemon's stats tree using methods fed by scrapping data"""
     def __init__(self, name, database_scrap):
 
         base_stats = get_base_stats(database_scrap)

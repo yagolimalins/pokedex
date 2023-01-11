@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 
 def get_base_stats(database_scrap):
-
+    """Uses provided scrapped html data for fetching base stats"""
     database_scrap = database_scrap
     soup = BeautifulSoup(database_scrap, "html.parser")
 
