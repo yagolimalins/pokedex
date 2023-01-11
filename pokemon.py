@@ -1,4 +1,4 @@
-from get_base_stats import get_base_stats
+from functions.get_base_stats import get_base_stats
 
 class Pokemon:
     """Design a pokemon's stats tree using methods fed by scrapping data"""

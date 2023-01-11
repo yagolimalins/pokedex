@@ -1,6 +1,6 @@
 from pokemon import Pokemon
-from db_scrap import pokedex_scrap
-from print_pokemon_data import print_pokemon_data
+from functions.db_scrap import pokedex_scrap
+from show_data import print_pokemon_data
 
 active = True
 
